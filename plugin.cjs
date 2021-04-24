@@ -9,8 +9,11 @@ module.exports = function (_, pluginOptions = {}) {
       output: ['.js'],
     },
     async load({ filePath }) {
-      const { compileXstate } = await liblucyPromise;
-      const contents = await readFile(filePath, 'utf-8');
+      const { compileXstate, ready } = await liblucyPromise;
+      const [contents] = await Promise.all([
+        readFile(filePath, 'utf-8'),
+        ready
+      ]);
       
       const js = compileXstate(contents, filePath, pluginOptions);
 
