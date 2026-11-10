@@ -1,6 +1,6 @@
 # @lucy/snowpack-plugin
 
-Use [Lucy](https://lucylang.org/) files in a Snowpack project.
+Use [Lucy](https://lucy.spooky.click/) files in a Snowpack project.
 
 ## Install
 
